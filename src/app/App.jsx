@@ -1,4 +1,3 @@
-// src/app/App.jsx
 import React, { useState } from 'react';
 
 const App = () => {

@@ -1,4 +1,3 @@
-// pages/index.jsx
 import React from 'react';
 import App from '../src/app/App';
 
