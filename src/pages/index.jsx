@@ -1,12 +1,12 @@
 import React from "react";
 import App from "../app/profiles/app";
-import { Inter } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] });
+const roboto = Roboto({ subsets: ['latin'], weight: ['400'] });
 
 export default function Home() {
   return (
-    <main className={inter.className}>
+    <main className={roboto.className}>
       <App />
     </main>
   );

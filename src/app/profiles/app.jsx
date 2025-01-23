@@ -2,12 +2,11 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import ProfileContent from '../../components/ProfileContent';
 import InfoPanel from '../../components/InfoPanel';
-import styles from './styles.module.css';
-import '../globals.css';
+import '../styles-as.css';
 
 export default function App() {
   return (
-    <div className={styles.container}>
+    <div className='container'>
       <Navbar />
       <ProfileContent />
       <InfoPanel />
