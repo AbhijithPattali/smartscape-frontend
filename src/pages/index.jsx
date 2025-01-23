@@ -1,12 +1,9 @@
 import React from "react";
 import App from "../app/profiles/app";
-import { Roboto } from 'next/font/google'
-
-const roboto = Roboto({ subsets: ['latin'], weight: ['400'] });
 
 export default function Home() {
   return (
-    <main className={roboto.className}>
+    <main className>
       <App />
     </main>
   );
