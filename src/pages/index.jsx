@@ -3,7 +3,7 @@ import App from "../app/profiles/app";
 
 export default function Home() {
   return (
-    <main className>
+    <main>
       <App />
     </main>
   );
