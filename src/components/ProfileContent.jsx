@@ -36,7 +36,7 @@ const styles = {
   mainContent: {
     flex: 1,
     padding: "20px",
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#fff",
   },
   header: {
     fontSize: "1.5rem",
