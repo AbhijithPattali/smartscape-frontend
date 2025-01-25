@@ -1,0 +1,87 @@
+.navbar {
+    width: 100%;
+    max-width: 221px;
+    background: linear-gradient(180deg, #17402a 9%, #3ca66d 100%);
+    color: #fff;
+    padding: 20px;
+    overflow-x: hidden;
+  }
+
+  .userLogoWrapper {
+    margin-top: -65px;
+    margin-left: 125px;
+  }
+
+  .navList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 70px;
+  }
+
+  .navItem {
+    margin-bottom: 1em;
+    cursor: pointer;
+    color: #fff;
+    padding: 0.8em 1.5em;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+  }
+
+  .activeNavItem {
+    color: #17402a;
+  }
+
+  .activeNavItemBefore {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: -30%;
+    bottom: 0;
+    background-color: #fff;
+    border-radius: 2em;
+    z-index: -1;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .navbar {
+      max-width: 100%; /* Full width on smaller screens */
+      padding: 10px;
+    }
+
+    .userLogoWrapper {
+      margin-top: -40px;
+      margin-left: 100px;
+    }
+
+    .navList {
+      margin-top: 50px;
+    }
+
+    .navItem {
+      font-size: 16px; /* Smaller text size */
+      padding: 0.6em 1em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 5px;
+    }
+
+    .userLogoWrapper {
+      margin-top: -30px;
+      margin-left: 80px;
+    }
+
+    .navItem {
+      font-size: 14px; /* Even smaller text size */
+      padding: 0.5em 0.8em;
+    }
+  }
