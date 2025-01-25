@@ -8,8 +8,10 @@ export default function App() {
   return (
     <div className="container">
       <Navbar />
-      <ProfileContent />
-      <InfoPanel />
+      <div className="mainContent">
+        <ProfileContent />
+        <InfoPanel />
+      </div>
     </div>
   );
 }

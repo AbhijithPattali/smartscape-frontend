@@ -17,3 +17,17 @@ html {
     flex-direction: row;
     min-height: 100vh;
 }
+
+.mainContent {
+    display: flex;
+    flex-direction: row;
+    /* Default to side by side on desktop */
+    width: 100%;
+}
+
+/* Mobile-specific layout adjustments */
+@media (max-width: 480px) {
+    .mainContent {
+        flex-direction: column;
+    }
+}

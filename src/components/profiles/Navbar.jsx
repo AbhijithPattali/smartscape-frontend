@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import styles from "./Navbar.module.css"; // Import the CSS file
 
+// A separate component for nav items to reduce repetition
+const NavItem = ({ name, activeNavItem, onClick }) => (
+  <li
+    className={`${styles.navItem} ${activeNavItem === name ? styles.activeNavItem : ""}`}
+    onClick={() => onClick(name)}
+  >
+    {name}
+  </li>
+);
+
 export default function Navbar() {
+  const [activeNavItem, setActiveNavItem] = useState("Profiles");
+
+  // List of nav items to render, can be expanded easily
+  const navItems = [
+    "Profiles",
+    "Privacy & Security",
+    "Admin Settings",
+    "Notifications",
+    "Rooms & Devices",
+  ];
+
+  const handleNavItemClick = (item) => setActiveNavItem(item);
+
   return (
     <nav className={styles.navbar}>
       <Image
@@ -24,13 +47,14 @@ export default function Navbar() {
         />
       </div>
       <ul className={styles.navList}>
-        <li className={`${styles.navItem} ${styles.activeNavItem}`}>
-          Profiles <span className={styles.activeNavItemBefore}></span>
-        </li>
-        <li className={styles.navItem}>Privacy & Security</li>
-        <li className={styles.navItem}>Admin Settings</li>
-        <li className={styles.navItem}>Notifications</li>
-        <li className={styles.navItem}>Rooms & Devices</li>
+        {navItems.map((item) => (
+          <NavItem
+            key={item}
+            name={item}
+            activeNavItem={activeNavItem}
+            onClick={handleNavItemClick}
+          />
+        ))}
       </ul>
     </nav>
   );

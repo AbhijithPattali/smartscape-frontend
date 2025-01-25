@@ -1,0 +1,20 @@
+.infoPanel {
+    width: 25%;
+    background-color: #fff;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+}
+
+/* Paragraph styles */
+.paragraph {
+    color: #717171;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .infoPanel {
+        margin-bottom: 80px;
+        width: 100%;
+        border-top: 1px solid #ddd;
+    }
+}
