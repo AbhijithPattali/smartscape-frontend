@@ -161,7 +161,7 @@
 
 /* Info Underline - Subtle underline for information values */
 .infoUnderline {
-  margin-top: 5px;
+  margin-top: 15px;
   border-bottom: 1px solid #EBEBEB; /* A subtle underline */
   width: 100%; /* Makes the underline span the entire width */
 }

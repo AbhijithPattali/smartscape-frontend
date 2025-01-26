@@ -53,6 +53,7 @@ export default function ProfileContent() {
         </button>
       </div>
 
+      {/* Personal Info */}
       <div>
       <h2 className={styles.personalInfo}>Personal Info</h2>
       <ul className={styles.infoList}>
@@ -67,7 +68,7 @@ export default function ProfileContent() {
           <div className={styles.infoTitle}>
             Email address <button className={styles.editButton}>Edit</button>
           </div>
-          <div className={styles.infoValue}>g*****@hw.ac.uk</div>
+          <div className={styles.infoValue}>x*****@hw.ac.uk</div>
           <div className={styles.infoUnderline}></div>
         </li>
         <li className={styles.infoItem}>
