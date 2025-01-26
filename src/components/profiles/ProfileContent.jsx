@@ -81,14 +81,14 @@ export default function ProfileContent() {
           <div className={styles.infoTitle}>
             Government ID <button className={styles.editButton}>Add</button>
           </div>
-          <div className={styles.infoValue}>Not Provided</div>
+          <div className={styles.infoValue}>Not provided</div>
           <div className={styles.infoUnderline}></div>
         </li>
         <li className={styles.infoItem}>
           <div className={styles.infoTitle}>
             Address <button className={styles.editButton}>Edit</button>
           </div>
-          <div className={styles.infoValue}>Not Provided</div>
+          <div className={styles.infoValue}>Not provided</div>
           <div className={styles.infoUnderline}></div>
         </li>
       </ul>
