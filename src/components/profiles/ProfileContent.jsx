@@ -22,7 +22,7 @@ export default function ProfileContent() {
         <div className={styles.profileInfo}>
           <Image
             className={styles.logo}
-            src="/user-2.svg"
+            src="/user.svg"
             alt="user"
             width={52}
             height={54}

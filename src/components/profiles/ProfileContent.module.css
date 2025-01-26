@@ -67,6 +67,7 @@
   display: flex;
   flex-direction: column; /* Stack icons and text vertically */
   gap: 15px; /* Space between each icon-text pair */
+  align-items: flex-start; /* Prevent children from stretching */
 }
 
 /* Icon with Text - Styling for clickable icon-text pairs */
