@@ -77,6 +77,8 @@
   display: inline-flex; /* Aligns the image and text horizontally */
   align-items: center; /* Centers the content vertically */
   gap: 10px; /* Adds spacing between the icon and text */
+  padding: 5px 10px; /* Add padding around the content */
+  border-radius: 4px; /* Add rounded corners for better UX */
 }
 
 .iconWithText span {
@@ -86,7 +88,7 @@
 }
 
 .iconWithText:hover {
-  opacity: 0.8; /* Slightly reduce opacity on hover */
+  background-color: #f0f0f0; /* Add a light hover background */
 }
 
 /* Sign-Out Button - Layout and styling for the sign-out button */
