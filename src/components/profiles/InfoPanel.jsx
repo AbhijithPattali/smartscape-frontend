@@ -1,16 +1,42 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { MdShield, MdLock, MdRemoveRedEye } from "react-icons/md"
 import styles from "./InfoPanel.module.css"
 
 export default function InfoPanel() {
-  // State to track the expanded/collapsed sections
+  const [isMobile, setIsMobile] = useState(false)
   const [expandedSections, setExpandedSections] = useState({
     section1: false,
     section2: false,
     section3: false,
   })
 
-  // Toggle section visibility
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 480)
+    }
+
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  useEffect(() => {
+    if (!isMobile) {
+      setExpandedSections({
+        section1: true,
+        section2: true,
+        section3: true,
+      })
+    } else {
+      setExpandedSections({
+        section1: false,
+        section2: false,
+        section3: false,
+      })
+    }
+  }, [isMobile])
+
   const toggleSection = (section) => {
     setExpandedSections((prev) => ({
       ...prev,

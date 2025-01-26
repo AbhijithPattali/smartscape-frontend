@@ -1,149 +1,136 @@
-/* Main Content Styles */
+/* Main layout */
 .mainContent {
   flex-grow: 1;
   padding: 20px;
   background-color: #fff;
 }
 
-/* Header - Styling for the main header section */
 .header {
-  color: #17402A;
+  color: #17402a;
   font-size: 36px;
   margin-bottom: 20px;
 }
 
-/* Profile Box - Layout and styling for the profile box */
+/* Profile box styles */
 .profileBox {
-  background-color: #A8B7AB;
+  background-color: #a8b7ab;
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 20px;
   display: flex;
-  align-items: flex-start; /* Align items at the top */
-  position: relative; /* For positioning the icons and button */
-
+  align-items: flex-start;
+  position: relative;
 }
 
-/* Profile Information - Flex layout for profile information */
 .profileInfo {
   display: flex;
-  align-items: center; /* Align image and text vertically */
+  align-items: center;
 }
 
-/* Logo - Spacing between logo and profile info text */
 .logo {
   margin-right: 10px;
 }
 
 .textContainer p {
-  margin: 0; /* Remove default margin from paragraphs */
+  margin: 0;
 }
 
 .textContainer p:first-child {
   margin-bottom: 5px;
 }
 
-/* Action Icons - Positioning and styling for icons in the profile box */
+/* Action icons */
 .actionIcons {
   position: absolute;
   top: 10px;
   right: 26px;
   display: flex;
-  gap: 10px; /* Space between the icons */
+  gap: 10px;
 }
 
-/* Icon Button - Styling for the clickable icon buttons */
 .iconButton {
-  all: unset; /* Resets all styles */
-  cursor: pointer; /* Ensures the button looks clickable */
+  all: unset;
+  cursor: pointer;
 }
 
 .iconButton:hover {
-  opacity: 0.8; /* Slightly reduce opacity on hover */
+  opacity: 0.8;
 }
 
-/* User Icons - Layout for user-related icons */
+/* User icons and buttons */
 .userIcons {
   display: flex;
-  flex-direction: column; /* Stack icons and text vertically */
-  gap: 15px; /* Space between each icon-text pair */
-  align-items: flex-start; /* Prevent children from stretching */
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
 }
 
-/* Icon with Text - Styling for clickable icon-text pairs */
 .iconWithText {
-  all: unset; /* Removes button default styling */
-  cursor: pointer; /* Makes it clickable */
-  display: inline-flex; /* Aligns the image and text horizontally */
-  align-items: center; /* Centers the content vertically */
-  gap: 10px; /* Adds spacing between the icon and text */
-  padding: 5px 10px; /* Add padding around the content */
-  border-radius: 4px; /* Add rounded corners for better UX */
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 
 .iconWithText span {
   font-weight: bold;
-  font-size: 16px; /* Adjust the font size */
-  color: #17402A; /* Set text color to green */
+  font-size: 16px;
+  color: #17402a;
 }
 
 .iconWithText:hover {
-  background-color: #f0f0f0; /* Add a light hover background */
+  background-color: #f0f0f0;
 }
 
-/* Sign-Out Button - Layout and styling for the sign-out button */
 .signOutButton {
-  align-self: flex-start; /* Align the button to the left */
-  margin-top: 25px; /* Push it to the bottom of the flex container */
+  align-self: flex-start;
+  margin-top: 25px;
   margin-left: auto;
   padding: 8px 12px;
-  background-color: transparent; /* Transparent background */
-  color: #17402A; /* Green text */
-  border: 2px solid #17402A; /* Green border */
-  border-radius: 4px; /* Rounded corners */
+  background-color: transparent;
+  color: #17402a;
+  border: 2px solid #17402a;
+  border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .signOutButton:hover {
-  background-color: #17402A; /* Green background on hover */
-  color: #fff; /* White text on hover */
-  border-color: #17402A; /* Green border on hover */
-
+  background-color: #17402a;
+  color: #fff;
 }
 
-/* Personal Info - Font size and color for the personal info section */
+/* Personal information styles */
 .personalInfo {
   font-size: 24px;
-  color: #17402A;
+  color: #17402a;
 }
 
-/* Info List - Reset list styles for information display */
 .infoList {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Info Item - Spacing for each info item */
 .infoItem {
   margin-bottom: 20px;
   position: relative;
 }
 
-/* Info Title - Layout for the title of the information items */
 .infoTitle {
   display: flex;
-  justify-content: space-between; /* Positions the edit button to the right */
-  align-items: center; /* Aligns text and button vertically */
+  justify-content: space-between;
+  align-items: center;
   font-size: 16px;
   color: #000000;
 }
 
-/* Edit Button - Styling for the clickable edit button */
 .editButton {
-  all: unset; /* Removes default button styling */
+  all: unset;
   font-size: 14px;
   font-weight: bold;
   color: #222222;
@@ -152,40 +139,34 @@
 }
 
 .editButton:hover {
-  opacity: 0.8; /* Slightly reduce opacity on hover */
+  opacity: 0.8;
 }
 
-/* Info Value - Font size and color for the values of each info item */
 .infoValue {
   font-size: 14px;
-  color: #717171; /* A lighter shade for the text */
-  margin: 5px 0 0; /* Adds spacing between title and value */
+  color: #717171;
+  margin: 5px 0 0;
 }
 
-/* Info Underline - Subtle underline for information values */
 .infoUnderline {
   margin-top: 15px;
-  border-bottom: 1px solid #EBEBEB; /* A subtle underline */
-  width: 100%; /* Makes the underline span the entire width */
+  border-bottom: 1px solid #ebebeb;
+  width: 100%;
 }
 
-/* Mobile-specific layout adjustments */
+/* Responsive styles */
 @media (max-width: 480px) {
-  /* Adjust header font size */
   .header {
     font-size: 1.75rem;
     margin-bottom: 15px;
   }
 
-  /* Adjust profileBox layout */
   .profileBox {
     padding: 10px;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
   }
 
-  /* Adjust profileInfo layout */
   .profileInfo {
     flex-direction: column;
     align-items: center;
@@ -196,17 +177,14 @@
     margin-bottom: 10px;
   }
 
-  /* Icons */
   .actionIcons {
     right: 10px;
   }
 
-  /* Adjust textContainer */
   .textContainer {
     text-align: center;
   }
 
-  /* Adjust sign-out button */
   .signOutButton {
     margin-left: 0;
     margin-top: auto;
@@ -215,3 +193,4 @@
     text-align: center;
   }
 }
+
