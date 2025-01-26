@@ -6,7 +6,7 @@
     border-radius: 10px; /* Round corners */
     border: 1px solid #ddd; /* Border around the entire panel */
     margin: 10px auto; /* Centered layout for small screens */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card {
@@ -41,24 +41,37 @@
     color: #333;
     transition: background-color 0.3s;
     box-sizing: border-box; /* Ensures padding fits within the button width */
+    border-radius: 8px;
 }
 
 .toggleButton:hover {
     background-color: #e0e0e0;
+    border-radius: 8px;
 }
 
 .toggleButton h2 {
     margin: 0; /* Remove additional margin around the text */
     flex: 1; /* Ensure the text takes up the remaining space evenly */
-}
 
+}
 
 .paragraph {
     color: #717171;
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 0;
+    padding: 0 10px;
     border-radius: 8px;
     font-size: 20px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+}
+
+.paragraph.expanded {
+    margin-top: 10px;
+    padding: 10px;
+    max-height: 1000px;
+    opacity: 1;
 }
 
 .paragraph:last-child {
