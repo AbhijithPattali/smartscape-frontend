@@ -2,19 +2,31 @@
     width: 25%;
     background-color: #fff;
     padding: 20px;
-    border-left: 1px solid #ddd;
+    border-radius: 10px; /* Round corners */
+    border: 1px solid #ddd; /* Border around the entire panel */
+    margin: 5px;
 }
 
 /* Paragraph styles */
 .paragraph {
     color: #717171;
+    margin-bottom: 1em; /* Optional */
+    padding-bottom: 1em; /* Optional */
+    border-bottom: 1px solid #ddd; /* Border under each paragraph */
 }
 
-/* Media query for mobile devices */
+.paragraph:last-child {
+    border-bottom: none;
+}
+
+/* Mobile-specific layout adjustments */
 @media (max-width: 480px) {
     .infoPanel {
         margin-bottom: 80px;
-        width: 100%;
-        border-top: 1px solid #ddd;
+        width: 95%;
+
+    }
+    .paragraph:last-child {
+        border-bottom: none;
     }
 }

@@ -27,7 +27,7 @@
     font-size: 20px;
     transition: all 0.3s ease;
     text-align: center;
-    font-weight: 600;
+    font-weight: bold;
     position: relative;
     z-index: 1;
 }
@@ -79,6 +79,7 @@
     z-index: -1;
 }
 
+/* Mobile-specific layout adjustments */
 @media (max-width: 480px) {
     .navbar {
         padding: 3px;

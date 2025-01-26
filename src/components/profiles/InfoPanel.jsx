@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import styles from "./InfoPanel.module.css"; // Import the CSS file
+import React from 'react';
+import Image from 'next/image';
+import styles from './InfoPanel.module.css'; // Import the CSS file
 
 export default function InfoPanel() {
   return (

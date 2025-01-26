@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Image from "next/image";
-import styles from "./Navbar.module.css"; // Import the CSS file
+import Image from 'next/image';
+import styles from './Navbar.module.css'; // Import the CSS file
 
 // A separate component for nav items to reduce repetition
 const NavItem = ({ name, activeNavItem, onClick }) => (
@@ -39,7 +39,7 @@ export default function Navbar() {
       <div className={styles.userLogoWrapper}>
         <Image
           className={styles.userLogo}
-          src="/duotone.svg"
+          src="/user.svg"
           alt="user logo"
           width={52}
           height={54}
