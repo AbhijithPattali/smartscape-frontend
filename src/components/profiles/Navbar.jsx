@@ -6,8 +6,6 @@ import {
   MdSettings,
   MdNotifications,
   MdDevices,
-  MdAccountCircle,
-  MdArrowBack,
   MdArrowBackIosNew,
 } from "react-icons/md"
 import styles from "./Navbar.module.css"
