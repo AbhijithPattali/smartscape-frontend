@@ -3,20 +3,22 @@
     background: linear-gradient(180deg, #17402a 9%, #3ca66d 100%);
     padding: 20px;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
 }
-
 
 .userLogoWrapper {
-    margin-top: -65px;
-    margin-left: 125px;
+    display: flex;
+    justify-content: right; /* Align user logo to the right */
+    margin-top: -60px; /* Adjust positioning */
 }
-
 
 .navList {
     list-style: none;
     padding: 0;
     margin: 0;
     margin-top: 70px;
+    flex-grow: 1; /* Allow nav items to take up available space */
 }
 
 .navItem {
@@ -25,71 +27,67 @@
     color: #fff;
     padding: 0.8em 1.5em;
     font-size: 20px;
-    transition: all 0.3s ease;
     text-align: center;
     font-weight: bold;
-    position: relative;
-    z-index: 1;
+    border-radius: 1.5em; /* Rounded rectangle effect */
+    transition: all 0.3s ease; /* Smooth transition */
+    background: transparent; /* Default background */
 }
 
-.navItem::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 5%;
-    right: -30%;
-    bottom: 0;
-    background-color: #fff;
-    border-radius: 2em;
-    opacity: 0;
-    /* Initially hidden */
-    z-index: -1;
-}
-
-/* Hover styles */
 .navItem:hover,
 .navItem:focus {
-    color: #17402a;
-    /* Change text color */
-    transform: scale(1.05);
-    /* Scale effect */
-}
-
-.navItem:hover::before,
-.navItem:focus::before {
-    opacity: 1;
-    /* Show background on focus */
+    background: #fff; /* Highlight background on hover or focus */
+    color: #17402a; /* Change text color */
+    transform: scale(1.05); /* Slight scaling effect */
 }
 
 .activeNavItem {
-    color: #17402a;
-    position: relative;
+    background: #fff; /* Highlight for the active item */
+    color: #17402a; /* Text color for active item */
 }
 
-.activeNavItem::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 5%;
-    right: -30%;
-    bottom: 0;
-    background-color: #fff;
-    border-radius: 2em;
-    opacity: 1;
-    z-index: -1;
+.icon {
+    display: none; /* Hide icons by default */
+}
+
+.navText {
+    display: block; /* Display text by default */
+}
+
+/* Styles for the Account button */
+.accountButton {
+    background-color: #fff; /* Button background color */
+    color: #000000;
+    font-size: 16px;
+    padding: 1em;
+    width: 100%; /* Stretch the button across the entire navbar */
+    border-radius: 0; /* Make the button rectangular */
+    border: 1px solid #000000; /* Border around the entire panel */
+    list-style: none; /* Remove default list-style marker */
+    display: flex; /* Use flexbox to align content horizontally */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the icon and text */
+}
+
+/* Separate account button styles */
+.accountButton:hover,
+.accountButton:focus {
+    background-color: #e0e0e0; /* Different background */
+    transform: scale(1.05);    /* Same scaling effect */
+    color: inherit;            /* Retain original text color */
+}
+
+/* Ensure the icon is shown for the account button */
+.accountButton .icon {
+    display: block;
+    font-size: 20px; /* Set icon size */
+    margin-right: 8px; /* Optional: to add some spacing between the icon and text */
 }
 
 /* Mobile-specific layout adjustments */
 @media (max-width: 480px) {
     .navbar {
-        padding: 3px;
-    }
-
-    .logo {
-        width: 50px;
-        /* Even smaller width */
-        height: 50px;
-        /* Even smaller height */
+        padding: 10px;
     }
 
     .userLogoWrapper {
@@ -98,14 +96,25 @@
     }
 
     .userLogo {
-        width: 35px;
-        /* Even smaller width */
+        width: 35px; /* Smaller size */
         height: 37px;
-        /* Even smaller height */
     }
 
     .navItem {
         font-size: 15px;
         padding: 0.5em 0.8em;
+        display: flex;
+        justify-content: center; /* Center the icon horizontally */
+        align-items: center; /* Center the icon vertically */
+    }
+
+    /* Show icons and hide text on mobile */
+    .icon {
+        display: block;
+        font-size: 24px; /* Icon size */
+    }
+
+    .navText {
+        display: none; /* Hide text on mobile */
     }
 }

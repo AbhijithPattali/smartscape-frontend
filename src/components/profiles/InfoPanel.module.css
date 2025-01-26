@@ -1,22 +1,68 @@
 .infoPanel {
-    width: 25%;
+    width: 100%; /* Default full width for small screens */
+    max-width: 400px; /* Limit maximum width */
     background-color: #fff;
     padding: 20px;
     border-radius: 10px; /* Round corners */
     border: 1px solid #ddd; /* Border around the entire panel */
-    margin: 5px;
+    margin: 10px auto; /* Centered layout for small screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
 }
 
-/* Paragraph styles */
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.section {
+    padding: 10px;
+    border-radius: 8px; /* Rounded corners for each section */
+    background-color: #f9f9f9; /* Light background for each section */
+    transition: transform 0.2s ease; /* Subtle hover effect */
+}
+
+.section:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.toggleButton {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between the icon and text */
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 10px 15px; /* Equal padding on all sides */
+    text-align: left;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    transition: background-color 0.3s;
+    box-sizing: border-box; /* Ensures padding fits within the button width */
+}
+
+.toggleButton:hover {
+    background-color: #e0e0e0;
+}
+
+.toggleButton h2 {
+    margin: 0; /* Remove additional margin around the text */
+    flex: 1; /* Ensure the text takes up the remaining space evenly */
+}
+
+
 .paragraph {
     color: #717171;
-    margin-bottom: 1em; /* Optional */
-    padding-bottom: 1em; /* Optional */
-    border-bottom: 1px solid #ddd; /* Border under each paragraph */
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 20px;
 }
 
 .paragraph:last-child {
-    border-bottom: none;
+    margin-bottom: 0;
 }
 
 /* Mobile-specific layout adjustments */
@@ -24,8 +70,8 @@
     .infoPanel {
         margin-bottom: 80px;
         width: 95%;
-
     }
+
     .paragraph:last-child {
         border-bottom: none;
     }

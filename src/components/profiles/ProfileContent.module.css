@@ -47,7 +47,7 @@
 .actionIcons {
   position: absolute;
   top: 10px;
-  right: 28px;
+  right: 26px;
   display: flex;
   gap: 10px; /* Space between the icons */
 }
@@ -67,7 +67,6 @@
   display: flex;
   flex-direction: column; /* Stack icons and text vertically */
   gap: 15px; /* Space between each icon-text pair */
-  align-items: flex-start; /* Prevents buttons from stretching across the container */
 }
 
 /* Icon with Text - Styling for clickable icon-text pairs */
@@ -143,7 +142,8 @@
 .editButton {
   all: unset; /* Removes default button styling */
   font-size: 14px;
-  color: #000000; /* Blue color for the underline */
+  font-weight: bold;
+  color: #222222;
   cursor: pointer;
   text-decoration: underline;
 }

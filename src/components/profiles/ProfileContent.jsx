@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { MdOutlineMode, MdDeleteOutline, MdManageAccounts, MdSwitchAccount, MdPersonAddAlt1  } from "react-icons/md";
 import styles from "./ProfileContent.module.css";
 
 export default function ProfileContent() {
@@ -10,10 +11,10 @@ export default function ProfileContent() {
         {/* Edit and Delete Icons */}
         <div className={styles.actionIcons}>
           <button className={styles.iconButton}>
-            <Image src="/edit.svg" alt="Edit" width={22} height={22} />
+            <MdOutlineMode size={22} />
           </button>
           <button className={styles.iconButton}>
-            <Image src="/delete.svg" alt="Delete" width={22} height={22} />
+            <MdDeleteOutline size={22} />
           </button>
         </div>
 
@@ -40,61 +41,63 @@ export default function ProfileContent() {
       {/* User Icons */}
       <div className={styles.userIcons}>
         <button className={styles.iconWithText}>
-          <Image src="/user-manage.svg" alt="Manage" width={24} height={24} />
+          <MdManageAccounts size={24} />
           <span>Manage your account</span>
         </button>
         <button className={styles.iconWithText}>
-          <Image src="/user-switch.svg" alt="Switch" width={24} height={24} />
+          <MdSwitchAccount size={24} />
           <span>Switch account</span>
         </button>
         <button className={styles.iconWithText}>
-          <Image src="/user-add.svg" alt="Add" width={24} height={24} />
+          <MdPersonAddAlt1 size={24} />
           <span>Add account</span>
         </button>
       </div>
 
       {/* Personal Info */}
       <div>
-      <h2 className={styles.personalInfo}>Personal Info</h2>
-      <ul className={styles.infoList}>
-        <li className={styles.infoItem}>
-          <div className={styles.infoTitle}>
-            Legal name <button className={styles.editButton}>Edit</button>
-          </div>
-          <div className={styles.infoValue}>Gerald</div>
-          <div className={styles.infoUnderline}></div>
-        </li>
-        <li className={styles.infoItem}>
-          <div className={styles.infoTitle}>
-            Email address <button className={styles.editButton}>Edit</button>
-          </div>
-          <div className={styles.infoValue}>x*****@hw.ac.uk</div>
-          <div className={styles.infoUnderline}></div>
-        </li>
-        <li className={styles.infoItem}>
-          <div className={styles.infoTitle}>
-            Phone numbers <button className={styles.editButton}>Add</button>
-          </div>
-          <div className={styles.infoValue}>Add a number to get in touch with you. You can add other numbers and choose how they're used.</div>
-          <div className={styles.infoUnderline}></div>
-        </li>
-        <li className={styles.infoItem}>
-          <div className={styles.infoTitle}>
-            Government ID <button className={styles.editButton}>Add</button>
-          </div>
-          <div className={styles.infoValue}>Not provided</div>
-          <div className={styles.infoUnderline}></div>
-        </li>
-        <li className={styles.infoItem}>
-          <div className={styles.infoTitle}>
-            Address <button className={styles.editButton}>Edit</button>
-          </div>
-          <div className={styles.infoValue}>Not provided</div>
-          <div className={styles.infoUnderline}></div>
-        </li>
-      </ul>
-    </div>
-
+        <h2 className={styles.personalInfo}>Personal Info</h2>
+        <ul className={styles.infoList}>
+          <li className={styles.infoItem}>
+            <div className={styles.infoTitle}>
+              Legal name <button className={styles.editButton}>Edit</button>
+            </div>
+            <div className={styles.infoValue}>Gerald</div>
+            <div className={styles.infoUnderline}></div>
+          </li>
+          <li className={styles.infoItem}>
+            <div className={styles.infoTitle}>
+              Email address <button className={styles.editButton}>Edit</button>
+            </div>
+            <div className={styles.infoValue}>x*****@hw.ac.uk</div>
+            <div className={styles.infoUnderline}></div>
+          </li>
+          <li className={styles.infoItem}>
+            <div className={styles.infoTitle}>
+              Phone numbers <button className={styles.editButton}>Add</button>
+            </div>
+            <div className={styles.infoValue}>
+              Add a number to get in touch with you. You can add other numbers
+              and choose how they're used.
+            </div>
+            <div className={styles.infoUnderline}></div>
+          </li>
+          <li className={styles.infoItem}>
+            <div className={styles.infoTitle}>
+              Government ID <button className={styles.editButton}>Add</button>
+            </div>
+            <div className={styles.infoValue}>Not provided</div>
+            <div className={styles.infoUnderline}></div>
+          </li>
+          <li className={styles.infoItem}>
+            <div className={styles.infoTitle}>
+              Address <button className={styles.editButton}>Edit</button>
+            </div>
+            <div className={styles.infoValue}>Not provided</div>
+            <div className={styles.infoUnderline}></div>
+          </li>
+        </ul>
+      </div>
     </main>
   );
 }
