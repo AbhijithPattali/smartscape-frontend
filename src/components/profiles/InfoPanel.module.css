@@ -70,6 +70,7 @@
   opacity: 0;
   overflow: hidden;
   transition: all 0.3s ease-out;
+  background-color: #F1F0F5;
 }
 
 /* Expanded paragraph styles */
@@ -78,21 +79,6 @@
   padding: 10px;
   max-height: 1000px;
   opacity: 1;
-}
-
-/* Desktop styles */
-@media (min-width: 481px) {
-  .infoPanel {
-    width: 100%; /* Full width for desktop */
-  }
-
-  /* Keep paragraphs expanded by default on desktop */
-  .paragraph {
-    margin-top: 10px;
-    padding: 10px;
-    max-height: 1000px;
-    opacity: 1;
-  }
 }
 
 /* Mobile-specific adjustments */
