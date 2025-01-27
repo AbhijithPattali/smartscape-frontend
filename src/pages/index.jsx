@@ -1,5 +1,5 @@
 import React from 'react';
-import App from '../app/profiles/app';
+import App from '../app/devices/app';
 
 export default function Home() {
   return (
