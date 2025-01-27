@@ -1,0 +1,66 @@
+
+/* Disable scrolling on the entire page */
+body {
+  overflow: hidden;
+}
+
+/* Layout styles */
+.layout {
+  display: flex; /* Creates a horizontal layout */
+  min-height: 100vh; /* Ensures full-page height */
+}
+
+.navbar {
+  flex-shrink: 0; /* Prevents the navbar from shrinking */
+  background: linear-gradient(180deg, #17402a 9%, #3ca66d 100%);
+  height: 100vh; /* Makes the navbar span the full viewport height */
+  overflow-x: hidden; /* Prevents horizontal scrolling in the navbar */
+}
+
+.main-content {
+  flex-grow: 1; /* Makes the main content take the remaining space */
+  overflow-y: auto; /* Enables scrolling for overflowing content */
+  background-color: #f8f9fa; /* Light gray background for the main content */
+  padding: 20px; /* Optional padding for better spacing */
+}
+
+/* General Navigation Item Styles */
+.navItem {
+  display: flex; /* Enables horizontal alignment of icon and text */
+  align-items: center; /* Vertically centers the icon and text */
+  margin-bottom: 1em; /* Adds space between navigation items */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  color: white; /* Sets text color to white */
+  padding: 0.8em 1.5em; /* Adds padding around the text and icon */
+  font-size: 20px; /* Sets font size */
+  text-align: left; /* Aligns text to the left */
+  font-weight: bold; /* Makes text bold */
+  border-radius: 1.5em; /* Rounds the corners of the nav item */
+  transition: all 0.3s ease; /* Adds smooth transition for hover effects */
+  background: transparent; /* Makes the background transparent by default */
+}
+
+/* Hover and Focus Effects for Navigation Items */
+.navItem:hover,
+.navItem:focus {
+  background: #fff; /* Sets background to white on hover/focus */
+  color: #17402a; /* Changes text color to dark green */
+  transform: scale(1.05); /* Slightly enlarges the item on hover/focus */
+}
+
+/* Active Navigation Item */
+.activeNavItem {
+  background: #fff; /* Sets background to white for the active item */
+  color: #17402a; /* Changes text color to dark green */
+}
+
+/* Spacing for the icon */
+.icon {
+  margin-right: 1rem; /* Adds reasonable gap between the icon and the text */
+  font-size: 24px; /* Ensure icons have a consistent size */
+}
+
+/* Text alignment for navigation items */
+.navText {
+  display: block; /* Ensures text is always visible */
+}
