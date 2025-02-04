@@ -1,183 +1,123 @@
 /* DeviceManagement.module.css */
 
-/* Device Management Container */
+/* General container styles */
 .deviceManagementContainer {
-    display: flex;
-    flex-direction: column;
-    padding: 16px; /* Reduced padding for a more compact layout */
-    background-color: #f8f9fa;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Prevent scrolling of the entire page */
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Gap between sections */
+}
 
-  /* Title */
-  .deviceManagementTitle {
-    font-size: 1.5rem; /* Reduced font size */
-    font-weight: 600;
-    color: #1B4332;
-    margin-bottom: 16px;
-    flex-shrink: 0;
-  }
+/* Section styles */
+.section {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  padding: 16px;
+  flex: 1;
+}
 
-  /* Grid Layout for Devices (Tile-based) */
-  .deviceGrid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 16px; /* Reduced gap */
-    margin-bottom: 16px;
-    flex-grow: 1; /* Allows the grid to grow and take up available space */
-  }
+/* Section Header styles */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  /* Ensures the title and buttons are on the same line */
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
 
-  @media (min-width: 768px) {
-    .deviceGrid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+/* Button Group for Add/Remove device buttons */
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+  /* Increased gap for better separation between buttons */
+}
 
-  @media (min-width: 1024px) {
-    .deviceGrid {
-      grid-template-columns: repeat(4, 1fr); /* Display 4 cards per row on large screens */
-    }
-  }
+/* Enhanced individual button styles */
+.buttonGroup .buttonItem {
+  background-color: #4CAF50;
+  /* Green background */
+  color: white;
+  /* White text */
+  padding: 12px 24px;
+  /* Larger padding for better button size */
+  border-radius: 30px;
+  /* Rounded corners for a sleek look */
+  font-size: 1rem;
+  /* Adjusted font size */
+  font-weight: 600;
+  /* Bold text for better emphasis */
+  text-align: center;
+  transition: all 0.3s ease;
+  /* Smooth transition for background color and scaling */
+  cursor: pointer;
+}
 
-  /* Device Card Styles (Tiles) */
-  .deviceCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ddd;
-    background-color: #ffffff;
-    color: #333;
-    padding: 4px; /* Reduced padding */
-    border-radius: 8px; /* Smaller border radius */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-    position: relative;
-  }
+/* Hover effects */
+.buttonGroup .buttonItem:hover {
+  background-color: #45a049;
+  /* Darker green on hover */
+  transform: scale(1.05);
+  /* Slightly enlarge the button on hover */
+}
 
-  .deviceCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Lighter hover effect */
-  }
+/* Focus effect for accessibility */
+.buttonGroup .buttonItem:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(72, 146, 73, 0.3);
+  /* Light green outline on focus */
+}
 
-  .samsungTv {
-      background-color: #F6E27F;
-      /* Yellow for Samsung TV */
-  }
+/* Grid Layout for Button List (3 tiles per row) */
+.buttonList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Fixed 3 tiles per row */
+  gap: 16px;
+  /* Gap between buttons */
+}
 
-  .backyardCctv {
-      background-color: #9BBEC7;
-      /* Yellow for CCTV */
-  }
+/* Individual Button Item styles */
+.buttonItem {
+  background-color: #D2DCF5;
+  padding: 16px;
+  /* Increased padding for better button size */
+  border-radius: 8px;
+  /* Rounded corners */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* Added transform for smooth hover effect */
+  display: flex;
+  justify-content: center;
+  /* Center text horizontally */
+  align-items: center;
+  /* Center text vertically */
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+  /* Darker text color for contrast */
+}
 
-  .ps5 {
-      background-color: #E2C391;
-      /* Yellow for Console */
-  }
+.buttonItem:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+  /* Slightly enlarge on hover */
+}
 
-  .hpPrinter {
-      background-color: #A8B7AB;
-      /* Yellow for Printer */
-  }
+/* Chevron icon style */
+.chevronIcon {
+  width: 14px;
+  height: 14px;
+  /* Smaller chevron icon */
+  margin-left: 8px;
+  /* Space between text and chevron icon */
+}
 
-  /* Device Icon Styles */
-  .deviceIcon {
-    height: 40px; /* Smaller icon size */
-    width: 40px;
-    margin-bottom: 12px; /* Reduced margin */
-  }
-
-  /* Device Name and Status */
-  .deviceName {
-    font-weight: 600;
-    font-size: 1rem; /* Reduced font size */
-    color: #333;
-    margin-bottom: 6px; /* Reduced margin */
-  }
-
-  .deviceStatus {
-    font-size: 0.75rem; /* Smaller font size */
-    color: #757575;
-    margin-bottom: 12px; /* Reduced margin */
-  }
-
-  /* Button Container for PS5 Card */
-  .connectButton {
-    margin-top: 5px;
-    padding: 4px 8px; /* Smaller button size */
-    background-color: #3ca66d;
-    color: white;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-  }
-
-  .connectButton:hover {
-    background-color: #2a8a52;
-  }
-
-  /* Devices and Rooms Section Horizontal Layout */
-  .sectionContainer {
-    display: flex;
-    gap: 16px; /* Reduced gap */
-    flex-grow: 1; /* Allows the sections to grow and take up available space */
-    overflow: hidden;
-  }
-
-  .section {
-    background-color: #f1f1f1;
-    border-radius: 8px; /* Smaller border radius */
-    padding: 8px; /* Reduced padding */
-    width: 100%;
-    flex: 1;
-    min-width: 250px; /* Reduced minimum width */
-  }
-
-  .sectionHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px; /* Reduced margin */
-    font-size: 1rem; /* Reduced font size */
-    font-weight: 600;
-    color: #333;
-  }
-
+/* Responsive Styles for button group */
+@media (min-width: 768px) {
   .buttonGroup {
-    display: flex;
-    gap: 10px; /* Reduced gap */
+    gap: 16px;
   }
-
-  /* Button List */
-  .buttonList {
-    display: flex;
-    flex-direction: column;
-    gap: 8px; /* Reduced gap */
-  }
-
-  /* Individual Button Items */
-  .buttonItem {
-    display: flex;
-    justify-content: space-between;
-    background-color: #cdcdcd;
-    padding: 10px; /* Reduced padding */
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-  }
-
-  .buttonItem:hover {
-    background-color: #e0e0e0;
-  }
-
-  .chevronIcon {
-    width: 14px;
-    height: 14px; /* Smaller chevron icon */
-  }
-
-  /* Responsive Button Group */
-  @media (min-width: 768px) {
-    .buttonGroup {
-      gap: 12px;
-    }
-  }
+}

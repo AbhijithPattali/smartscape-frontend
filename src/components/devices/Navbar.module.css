@@ -1,20 +1,14 @@
-
-
-/* Logo styles */
-.smartScapeLogo {
-  display: block;
-  width: 100%;
-  max-width: 82px;
-  height: auto;
-}
+/* Navbar Styles */
 
 /* Main navbar container */
 .navbar {
   max-width: 221px;
+  height: 100vh;
   padding: 20px;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  background-color: #152447;
 }
 
 /* Navbar header section */
@@ -91,14 +85,14 @@
 .navItem:hover,
 .navItem:focus {
   background: #fff;
-  color: #17402a;
+  color: #152447;
   transform: scale(1.05);
 }
 
 /* Active nav item styles */
 .activeNavItem {
   background: #fff;
-  color: #17402a;
+  color: #152447;
 }
 
 /* Icon and text styles for nav items */
