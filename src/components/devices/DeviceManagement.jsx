@@ -35,8 +35,8 @@ const DeviceManagement = () => {
         <div className={styles.sectionHeader}>
           <h2>Devices</h2>
           <div className={styles.buttonGroup}>
-            <Button variant="outline" size="sm">Add device</Button>
-            <Button variant="outline" size="sm">Remove device</Button>
+            <Button className={styles.buttonItem}>Add device</Button>
+            <Button className={styles.buttonItem}>Remove device</Button>
           </div>
         </div>
         <div className={styles.buttonList}>

@@ -37,7 +37,7 @@
 
 /* Enhanced individual button styles */
 .buttonGroup .buttonItem {
-  background-color: #4CAF50;
+  background-color: #152447;
   /* Green background */
   color: white;
   /* White text */
@@ -57,7 +57,8 @@
 
 /* Hover effects */
 .buttonGroup .buttonItem:hover {
-  background-color: #45a049;
+  background-color: #D2DCF5;
+  color: #152447;
   /* Darker green on hover */
   transform: scale(1.05);
   /* Slightly enlarge the button on hover */
