@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
-import Button from './Button'; // Make sure this is the correct path
+import Button from '../additional/button'; // Make sure this is the correct path
 import styles from './DeviceManagement.module.css'; // Import the CSS module
 
 const DeviceManagement = () => {
@@ -14,9 +14,7 @@ const DeviceManagement = () => {
           {[
             'Hall',
             'Dining room',
-            'Master Bedroom', // Master Bedroom
-            'Guest Bedroom 1', // First Guest Bedroom
-            'Guest Bedroom 2', // Second Guest Bedroom
+            'Bedroom',
             'Store room',
             'Study room',
             'Backyard',
