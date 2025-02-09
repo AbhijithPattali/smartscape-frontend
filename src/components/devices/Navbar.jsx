@@ -1,5 +1,6 @@
-import React, { useState } from "react"
-import Image from "next/image"
+"use client"
+
+import { useState, useEffect } from "react"
 import {
   MdPerson,
   MdSecurity,
@@ -7,59 +8,82 @@ import {
   MdNotifications,
   MdDevices,
   MdArrowBackIosNew,
+  MdMenu,
+  MdClose,
 } from "react-icons/md"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { WeatherWidget } from "./Weather"
 import styles from "./Navbar.module.css"
 
-const NavItem = ({ name, icon: Icon, activeNavItem, onClick, className }) => (
-  <li
-    className={`${styles.navItem} ${activeNavItem === name ? styles.activeNavItem : ""} ${className || ""}`}
-    onClick={() => onClick(name)}
-  >
-    {Icon && <Icon className={styles.icon} />}
-    <span className={styles.navText}>{name}</span>
-  </li>
-)
+const navigation = [
+  { name: "Profiles", href: "#", icon: MdPerson },
+  { name: "Privacy & Security", href: "#", icon: MdSecurity },
+  { name: "Admin Settings", href: "#", icon: MdSettings },
+  { name: "Notifications", href: "#", icon: MdNotifications },
+  { name: "Rooms & Devices", href: "#", icon: MdDevices },
+  { name: "Dashboard", href: "#", icon: MdArrowBackIosNew },
+]
 
 export default function Navbar() {
-  const [activeNavItem, setActiveNavItem] = useState("Profiles")
+  const pathname = usePathname()
+  const [time, setTime] = useState(new Date())
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const navItems = [
-    { name: "Profiles", icon: MdPerson },
-    { name: "Privacy & Security", icon: MdSecurity },
-    { name: "Admin Settings", icon: MdSettings },
-    { name: "Notifications", icon: MdNotifications },
-    { name: "Rooms & Devices", icon: MdDevices },
-  ]
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date())
+    }, 1000)
 
-  const handleNavItemClick = (item) => setActiveNavItem(item)
+    return () => clearInterval(interval)
+  }, [])
 
-  const handleBackClick = () => {
-    console.log("Back button clicked")
-    // Add your back button functionality here
+  const hours = time.getHours() % 12 || 12
+  const minutes = time.getMinutes()
+  const ampm = time.getHours() >= 12 ? "PM" : "AM"
+
+  const timeString = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")} ${ampm}`
+
+  const dateString = time.toLocaleDateString("en-AE", {
+    weekday: "long",
+    day: "numeric",
+    month: "short",
+  })
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
   }
 
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.navHeader}>
-        <div className={styles.logoWrapper}>
-          <Image
-            className={styles.smartScapeLogo}
-            src="/logo-small.svg"
-            alt="smartscape logo"
-            width={82}
-            height={67}
-            priority
-          />
-          <button className={styles.backButton} onClick={handleBackClick} aria-label="Go back">
-            <MdArrowBackIosNew />
-          </button>
+    <div className={`${styles.navbar} ${isMenuOpen ? styles.menuOpen : ""}`}>
+      <div className={styles.mobileHeader}>
+        <div className={styles.timeDisplay}>
+          <div className={styles.currentTime}>{timeString}</div>
+          <div className={styles.currentDate}>{dateString}</div>
         </div>
+        <button className={styles.menuToggle} onClick={toggleMenu}>
+          {isMenuOpen ? <MdClose size={24} /> : <MdMenu size={24} />}
+        </button>
       </div>
-      <ul className={styles.navList}>
-        {navItems.map(({ name, icon }) => (
-          <NavItem key={name} name={name} icon={icon} activeNavItem={activeNavItem} onClick={handleNavItemClick} />
-        ))}
-      </ul>
-    </nav>
+      <nav className={`${styles.navMenu} ${isMenuOpen ? styles.show : ""}`}>
+        {navigation.map((item) => {
+          const isActive = pathname === item.href
+          return (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={`${styles.navLink} ${isActive ? styles.active : ""}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <item.icon className={styles.icon} />
+              <span className={styles.navText}>{item.name}</span>
+            </Link>
+          )
+        })}
+      </nav>
+      <div className={styles.weatherContainer}>
+        <WeatherWidget />
+      </div>
+    </div>
   )
 }
